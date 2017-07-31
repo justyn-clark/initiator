@@ -13,8 +13,8 @@ The opinionated Initiator framework. Built for the modern developer. For teams a
 Get started with Initiator:
 
 1. **Clone the project**. `git clone http://github.com/justyn-clark/initiator.git`.
-2. **Install local dependancies**. run `[sudo] npm install` (first time users)
-3. **Run the project**. `npm start`
+2. **Install local dependancies**. run `[sudo] yarn install` (first time users)
+3. **Run the project**. `yarn start`
 This will run the automated build process, start up a webserver, and open the application in your default browser. When doing development with this kit, this command will continue watching all your files.
 
 ## Documentation
@@ -29,7 +29,6 @@ Here are some of the main features of Initiator:
 * Built-in npm build scripts for auto-compilation and auto-minification of CSS and JavaScript files for production
 * Baseline HTML5 features, DNS prefetching, responsive meta
 * Encourages one-file CSS/JS in the view (HTML) for performance
-* Includes jQuery 
 * Browsersync live reloading the browser upon changes
 * Includes [Skeleton-Sass](http://getskeleton.com) responsive simple light-weight CSS framework with pre-setup Sass/SCSS files and folders for baseline project structure and imports
 * Includes .editorconfig for consistent coding styles in IDEs
