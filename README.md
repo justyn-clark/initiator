@@ -2,7 +2,7 @@
 
 THE modern front-end boilerplate and workflow.
 
-The opinionated Initiator framework. Built for the modern developer. For teams and the individual, encouraging a better workflow. JavaScript task running, build processes, autominification and file concatenation, wrapped with an enhanced HTML5 boilerplated framework.
+Built for the modern developer. For teams and the individual, encouraging a better workflow. JavaScript task running, build processes, autominification and file concatenation, wrapped with an enhanced HTML5 boilerplated framework.
 
 * Source: [github.com/justyn-clark/initiator](http://github.com/justyn-clark/initiator)
 * Author: [Justyn Clark](http://justynclark.com)
