@@ -1,4 +1,2 @@
-if (typeof nameSpace == "undefined") {
-  var nameSpace = {};
-}
-console.log(nameSpace);
+const namespace = namespace !== undefined ? namespace : {};
+console.log(namespace);
