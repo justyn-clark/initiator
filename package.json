@@ -11,19 +11,24 @@
     "autoprefixer": "^7.1.2",
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.6.0",
+    "babelify": "^7.3.0",
     "browser-sync": "^2.18.13",
-    "chokidar-cli": "^1.2.0",
     "node-sass": "^4.5.3",
+    "nodemon": "^1.12.1",
     "npm-run-all": "^4.0.2",
-    "postcss-cli": "^4.1.0"
+    "postcss-cli": "^4.1.0",
+    "uglify-js": "^3.1.3",
+    "watchify": "^3.9.0"
   },
   "scripts": {
-    "start": "npm-run-all -p sync js sass sass:watch autoprefixer",
-    "sync": "browser-sync start --server --files \"*.html, app/bundle.js, app/app.css\"",
-    "js": "babel src/js --watch -o app/bundle.js --source-maps --presets env",
-    "sass:watch": "node-sass --watch src/**/*.scss app/app.css",
-    "sass": "node-sass src/**/*.scss app/app.css",
-    "autoprefixer": "chokidar 'src/**/*.scss' -c 'npm run postcss'",
-    "postcss": "postcss app/*.css --use autoprefixer -d app"
-  }
+    "start": "npm-run-all -p sync module-js watch:css",
+    "sync": "browser-sync start --server --files \"*.html, app/bundle.js, app/scripts.js, app/app.css\"",
+    "js": "babel src/js/scripts --watch -o app/scripts.js --source-maps --presets env",
+    "module-js": "watchify src/index.js -d -t [ babelify  --presets [ env ] ] --outfile app/bundle.js -v",
+    "js-dist": "uglifyjs app/bundle.js --compress --mangle --output app/bundle.min.js --source-map",
+    "watch:css": "nodemon -e scss -x \"npm-run-all sass autoprefixer\"",
+    "sass": "node-sass --include-path scss src/**/*.scss app/app.css --source-map-embed --source-map-contents --output-style compact",
+    "autoprefixer": "postcss --use autoprefixer -o app/app.css app/app.css"
+  },
+  "main": "src/index.js"
 }
